@@ -11,6 +11,7 @@ with open('sim_data/driving_log.csv') as csvfile:
 
 images = []
 measurements = []
+correction = [0.0, 0.2, -0.2]
 
 for line in lines:
     for i in range(3):
@@ -18,9 +19,8 @@ for line in lines:
         filename = source_path.split('/')[-1]
         current_path = 'sim_data/IMG/' + filename
         image = ndimage.imread(current_path)
-        # image = cv2.imread(current_path)
         images.append(image)
-        measurement = float(line[3])
+        measurement = float(line[3]) + correction[i]
         measurements.append(measurement)
 
 # Augmented images
@@ -53,5 +53,5 @@ model.add(Dense(10))
 model.add(Dense(1))
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(X_train, y_train, validation_split=0.2, shuffle=True, nb_epoch=10)
+model.fit(X_train, y_train, validation_split=0.2, shuffle=True, nb_epoch=3)
 model.save('model.h5')
