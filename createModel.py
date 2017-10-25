@@ -5,7 +5,7 @@ import numpy as np
 import sklearn
 
 # Read in sample data names from log file
-samples = []
+lines = []
 with open('sim_data/driving_log.csv') as csvfile:
     reader = csv.reader(csvfile)
     for line in reader:
