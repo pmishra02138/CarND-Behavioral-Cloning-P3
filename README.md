@@ -27,9 +27,8 @@ This lab requires:
 
 The lab environment can be created with behavioral cloning environment.The following resources can be found in this github repository:
 
-* model.py (script used to create and train the model)
+* createModel.py (script used to create and train the model)
 * drive.py (script to drive the car - feel free to modify this file)
-* createModel.py (script for create a Keras model)
 * model.h5 (a trained Keras model)
 * writeup_report.md (a report writeup file)
 * video.mp4 (a video recording of vehicle driving autonomously around the track)
@@ -74,4 +73,4 @@ The fourth argument, `run1`, is the directory in which the images seen by the ag
 python video.py run1
 ```
 
-Creates a video based on images found in the `run1` directory. The name of the video will be the name of the directory followed by `'.mp4'`, so, in this case the video will be `run1.mp4`.
+Creates a video based on images found in the `run1` directory. The name of the video will be the name of the directory followed by `'.mp4'`, so, in this case the video name is `run1.mp4`.
